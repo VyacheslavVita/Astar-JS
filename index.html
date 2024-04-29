@@ -7,6 +7,43 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
+    <header class="header">
+        <div class="site-logo">
+            <h1 class="site-name">A* ALGORITHM</h1>
+        </div>
+        <nav class="header-menu">
+            <ul class="menu-list">
+                <li><a class="menu-link" href="#">На главную</a></li>
+                <li><a class="menu-link" href="#">Алгоритм</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <section class="settings">
+            <div class="settings-item">
+                <label for="size">Размерность</label>
+                <input id="size" type="number">
+            </div>
+            <div class="settings-item">
+                <button onclick="generateField()" class="btn">Генерация</button>
+            </div>
+            <div class="settings-item">
+                <button onclick="swapStatus('wall')" class="btn">Стена</button>
+            </div>
+            <div class="settings-item">
+                <button onclick="swapStatus('start')" class="btn">Старт</button>
+            </div>
+            <div class="settings-item">
+                <button onclick="swapStatus('finish')"  class="btn">Финиш</button>
+            </div>
+            <div class="settings-item">
+                <button class="btn">Поиск</button>
+            </div>
+        </section>
+        <section class="astar-place">
+            
+        </section>
+    </main>
     <script src="app.js"></script>
 </body>
 </html>
