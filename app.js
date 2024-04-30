@@ -1,5 +1,7 @@
 var currentStatus = "empty";
 var currentSize;
+
+var startElement;
 var finishElement;
 
 function generateField() {
@@ -37,15 +39,16 @@ function addClickHandlerToCeils() {
 }
 
 class Ceil {
-    constructor(status, x, y, g, h) {
+    constructor(status, x, y, g, h, f) {
         this.status = status;
         this.x = x;
         this.y = y;
         this.g = g;
         this.h = h;
+        this.f = f;
+        this.parent = null;
+        this.isWay = false;
     }
-
-    
 }
 
 function createCeilsArray() {
@@ -55,7 +58,7 @@ function createCeilsArray() {
     var j = 0;
 
     document.querySelectorAll(".ceil").forEach(function(ceil) {
-        var obj = new Ceil(ceil.classList[1], i++, j, 0, 0);
+        var obj = new Ceil(ceil.classList[1], i++, j, 0, 0, 0);
         array.push(obj);
         if (i == currentSize) {
             i = 0;
@@ -71,10 +74,6 @@ function astarSearch() {
     
     var closedList = [];
     var openList = [];
-    var wayList = [];
-
-    var startElement;
-    
 
     array.forEach(element => {
         if (element.status == "start") {
@@ -85,11 +84,70 @@ function astarSearch() {
         }
     });
 
-    startElement.g = 0;
-    startElement.h = getHeuristic(startElement);
-
     openList.push(startElement);
-    console.log(openList);
+
+    while (openList.length > 0) {
+        console.log("итерация!")
+        var currentElement = openList[0];
+        // console.log(currentElement);
+        openList.forEach(element => {
+            if (element.f < currentElement.f) {
+                currentElement = element;
+            }
+        });
+
+        let index = openList.find(elem => elem.x == currentElement.x && elem.y == currentElement.y);
+        openList.splice(index, 1);
+        closedList.push(currentElement);
+
+        // console.log(closedList);
+
+        if (currentElement.status == "finish") {
+            alert("Путь найден!");
+            break;
+        }
+
+        array.forEach(element => {
+            if (Math.abs(currentElement.x - element.x) <= 1 && Math.abs(currentElement.y - element.y) <= 1) {
+                // console.log(element);
+                let check = closedList.find(elem => elem == element);
+                if (check == undefined) {
+                    // console.log(element);
+                    if (element.status != "wall") {
+                        let tempF = getDistance(element, currentElement) + getHeuristic(element);
+                        if (element.f == 0 || tempF < element.f) {
+                            element.g = getDistance(element, currentElement);
+                            element.h = getHeuristic(element);
+                            element.f = element.g + element.h;
+                            element.parent = currentElement;
+                        }
+
+                        let check = openList.find(elem => elem == element);
+                        if (check == undefined) {
+                            openList.push(element);
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    let currentCeil = finishElement;
+    while (currentCeil != null) {
+        currentCeil.isWay = true;
+        // console.log(currentCeil);
+        currentCeil = currentCeil.parent;
+    }
+    
+    console.log(array);
+
+    let arr = document.querySelectorAll(".ceil");
+    console.log(arr);
+    for (let i = 0; i < currentSize * currentSize; i++) {
+        if (array[i].isWay == true) {
+            arr[i].classList.add("way");
+        }
+    }
 }
 
 function getDistance(ceil1, ceil2) {
@@ -97,5 +155,5 @@ function getDistance(ceil1, ceil2) {
 }
 
 function getHeuristic(ceil) {
-    return Math.abs(ceil.x - finishElement.x) - 1;
+    return Math.abs(ceil.x - finishElement.x);
 }

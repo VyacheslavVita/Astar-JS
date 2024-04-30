@@ -111,9 +111,13 @@ input {
 }
 
 .start {
-    background-color: greenyellow;
+    background-color: green;
 }
 
 .finish {
     background-color: red;
+}
+
+.way {
+    background-color: greenyellow;
 }
