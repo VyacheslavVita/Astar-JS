@@ -70,6 +70,7 @@ label:hover {
 }
 
 input {
+    text-align: center;
     background-color: white;
     width: 50px;
     height: 25px;
@@ -85,6 +86,10 @@ input {
 
 .btn:hover {
     background-color: darkorange;
+}
+
+.btn:disabled {
+    background-color: gray;
 }
 
 .line {

@@ -22,22 +22,28 @@
         <section class="settings">
             <div class="settings-item">
                 <label for="size">Размерность</label>
-                <input id="size" type="number">
+                <input id="size" type="number" min="2" max="10" value="2">
             </div>
             <div class="settings-item">
-                <button onclick="generateField()" class="btn">Генерация</button>
+                <button id="generate_button" onclick="generateField()" class="btn">Генерация</button>
             </div>
             <div class="settings-item">
-                <button onclick="swapStatus('wall')" class="btn">Стена</button>
+                <button disabled onclick="swapStatus('wall')" class="btn">Стена</button>
             </div>
             <div class="settings-item">
-                <button onclick="swapStatus('start')" class="btn">Старт</button>
+                <button disabled id="start_button" onclick="swapStatus('start')" class="btn">Старт</button>
             </div>
             <div class="settings-item">
-                <button onclick="swapStatus('finish')"  class="btn">Финиш</button>
+                <button disabled id="finish_button" onclick="swapStatus('finish')"  class="btn">Финиш</button>
             </div>
             <div class="settings-item">
-                <button onclick="astarSearch()" class="btn">Поиск</button>
+                <button disabled onclick="swapStatus('empty')"  class="btn">Отчистить клетку</button>
+            </div>
+            <div class="settings-item">
+                <button id="reset_button" onclick="deleteField()" disabled class="btn">Сбросить поле</button>
+            </div>
+            <div class="settings-item">
+                <button id="search_button" onclick="astarSearch()" disabled class="btn">Поиск</button>
             </div>
         </section>
         <section class="astar-place">
