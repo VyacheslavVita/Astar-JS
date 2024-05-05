@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A* ALGORITHM</title>
+    <link rel="stylesheet" href="styles/algorithm.css">
+</head>
+<body>
+    <header class="header">
+        <div class="menu-wrapper">
+            <div class="logo-box">
+                <h1 class="site-logo">A* ALGORITHM</h1>
+            </div>
+            <nav class="menu-box">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <div class="button-box">
+                            <a class="menu-link" href="index.html">Главная</a>
+                        </div>
+                    </li>
+                    <li class="menu-item">
+                        <div class="button-box">
+                            <a class="menu-link" href="algorithm.html">Алгоритм</a>
+                        </div>
+                    </li>
+                    <li class="menu-item">
+                        <div class="button-box">
+                            <a class="menu-link" href="https://github.com/VyacheslavVita/Astar-JS" target="_blank">Репозиторий</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="astar-wrapper">
+            <section class="settings">
+                <div class="settings-item">
+                    <label class="size"  for="size">Размерность</label><br><br>
+                    <input class="input-size" id="size" type="number" min="2" max="10" value="2">
+                </div>
+                <div class="settings-item">
+                    <button id="generate_button" onclick="generateField()" class="btn">Генерация</button>
+                </div>
+                <div class="settings-item">
+                    <button disabled onclick="swapStatus('wall')" class="btn">Стена</button>
+                </div>
+                <div class="settings-item">
+                    <button disabled id="start_button" onclick="swapStatus('start')" class="btn">Старт</button>
+                </div>
+                <div class="settings-item">
+                    <button disabled id="finish_button" onclick="swapStatus('finish')"  class="btn">Финиш</button>
+                </div>
+                <div class="settings-item">
+                    <button disabled onclick="swapStatus('empty')"  class="btn">Отчистить клетку</button>
+                </div>
+                <div class="settings-item">
+                    <button id="reset_button" onclick="deleteField()" disabled class="btn">Сбросить поле</button>
+                </div>
+                <div class="settings-item">
+                    <button id="search_button" onclick="astarSearch()" disabled class="btn">Поиск</button>
+                </div>
+            </section>
+            <section class="astar-place"></section>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>

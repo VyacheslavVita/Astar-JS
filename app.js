@@ -249,7 +249,7 @@ function recoveryWay(ceilsArray) {
 
     let array = document.querySelectorAll(".ceil");
     for (let i = 0; i < currentSize * currentSize; i++) {
-        if (ceilsArray[i].isWay) {
+        if (ceilsArray[i].isWay && ceilsArray[i].status != "start" && ceilsArray[i].status != "finish") {
             array[i].classList.add("way");
         }
     }

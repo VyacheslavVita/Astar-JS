@@ -3,53 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Алгоритм A*</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <title>A* ALGORITHM</title>
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
     <header class="header">
-        <div class="site-logo">
-            <h1 class="site-name">A* ALGORITHM</h1>
+        <div class="menu-wrapper">
+            <div class="logo-box">
+                <h1 class="site-logo">A* ALGORITHM</h1>
+            </div>
+            <nav class="menu-box">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <div class="button-box">
+                            <a class="menu-link" href="index.html">Главная</a>
+                        </div>
+                    </li>
+                    <li class="menu-item">
+                        <div class="button-box">
+                            <a class="menu-link" href="algorithm.html">Алгоритм</a>
+                        </div>
+                    </li>
+                    <li class="menu-item">
+                        <div class="button-box">
+                            <a class="menu-link" href="https://github.com/VyacheslavVita/Astar-JS" target="_blank">Репозиторий</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <nav class="header-menu">
-            <ul class="menu-list">
-                <li><a class="menu-link" href="#">На главную</a></li>
-                <li><a class="menu-link" href="#">Алгоритм</a></li>
-            </ul>
-        </nav>
     </header>
     <main class="main">
-        <section class="settings">
-            <div class="settings-item">
-                <label for="size">Размерность</label>
-                <input id="size" type="number" min="2" max="10" value="2">
-            </div>
-            <div class="settings-item">
-                <button id="generate_button" onclick="generateField()" class="btn">Генерация</button>
-            </div>
-            <div class="settings-item">
-                <button disabled onclick="swapStatus('wall')" class="btn">Стена</button>
-            </div>
-            <div class="settings-item">
-                <button disabled id="start_button" onclick="swapStatus('start')" class="btn">Старт</button>
-            </div>
-            <div class="settings-item">
-                <button disabled id="finish_button" onclick="swapStatus('finish')"  class="btn">Финиш</button>
-            </div>
-            <div class="settings-item">
-                <button disabled onclick="swapStatus('empty')"  class="btn">Отчистить клетку</button>
-            </div>
-            <div class="settings-item">
-                <button id="reset_button" onclick="deleteField()" disabled class="btn">Сбросить поле</button>
-            </div>
-            <div class="settings-item">
-                <button id="search_button" onclick="astarSearch()" disabled class="btn">Поиск</button>
-            </div>
-        </section>
-        <section class="astar-place">
-            
+        <section class="main-box">
+            <p class="main-text">
+                Известный алгоритм для поиска кратчайшего пути — A* (читается как «А звезда» или «А стар»). По сути, это расширение алгоритма Дейкстры с дополнительными функциями для улучшения скорости. Разработали A* в 1968 году, используют — до сих пор в разных областях: от робототехники до навигации и геймдева. Так же как и алгоритм Дейкстры, A* ищет расстояние от начальной точки до конечной. Но, в отличие от последнего, он учитывает не только расстояние от текущей точки до начальной, но и эвристическую оценку этого расстояния. В данном контексте «эвристическая» означает «примерная»: функция не определяет точное расстояние от точки до цели, но подсказывает алгоритму приблизительную величину. Эвристическая функция в данной реализации расчитывается достаточно просто: <em>h(ceil) = |ceil.x - finishCeil.x|</em>. Для вычисления растояния от клетки до клетки <em>g(ceil)</em> используется теорема Пифагора. Для отбора самых "выгодных" клеток используется: <em>f(ceil) = g(ceil) + h(ceil)</em>. Примерный алгоритм выглядит следующим образом: 1. Начальная клетка добавляется в openList 2. Пока openList не пуст, извлекается клетка с наименьшем значением <em>f(ceil)</em>. 3. Если извлеченная клетка является финишной алгоритм завершает работу 4. Иначе для каждой соседней клетки текущей клетки: -Если клетка не в closedList и не являеся препятствием, она добавляется в openList -Пересчитывается значение функции <em>g(ceil)</em> для соседних клеток -Если новый путь короче, чем ранее найденный обновляем значение <em>g(ceil)</em> для этой клетки 5. Возвращаемся к шагу 2. В навигационном меню в хедере сайта есть вкладка <em>"Алгоритм"</em>, можете опропобавать его в действии.
+            </p>
         </section>
     </main>
-    <script src="app.js"></script>
 </body>
 </html>

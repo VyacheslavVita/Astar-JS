@@ -1,0 +1,154 @@
+@import url(reset.css);
+
+@font-face {
+    font-family: "Roboto Slab";
+    src: url(../fonts/RobotoSlab-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+}
+
+.header {
+    margin-bottom: 25px;
+}
+
+.menu-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-left: 300px;
+    padding-right: 300px;
+    
+    height: 100px;
+    border: 4px solid aqua;
+}
+
+.site-logo {
+    font-family: "Roboto Slab";
+    font-size: 32px;
+    color: aqua;    
+}
+
+.menu-list li {
+    display: inline-block;
+    margin-left: 60px;
+}
+
+.button-box {
+    width: 180px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: aqua;
+    transition: 0.2s all ease-in-out;
+}
+
+.button-box:hover {
+    background-color: rgb(78, 202, 202);
+}
+
+.menu-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: inherit;
+    height: inherit;
+
+    text-shadow: 1px 1px 10px black;
+    font-family: "Roboto Slab";
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+}
+
+.astar-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-left: 300px;
+    padding-right: 300px;
+}
+
+.settings-item {
+    margin-bottom: 35px;
+}
+
+.btn {
+    font-family: "Roboto Slab";
+    font-size: 20px;
+    background-color: aqua;
+    color: white;
+    text-shadow: 1px 1px 10px black;
+    padding: 20px;
+    width: 150px;
+    border-radius: 10px;
+    transition: 0.2s all ease-in-out;
+}
+
+.btn:hover {
+    background-color: rgb(78, 202, 202);
+}
+
+.btn:disabled {
+    background-color: gray;
+}
+
+.size {
+    font-family: "Roboto Slab";
+    color: aqua;
+    font-size: 20px;
+}
+
+.input-size {
+    background-color: white;
+    text-align: center;
+    border-radius: 5px;
+    width: 150px;
+    height: 40px;
+    font-size: 24px;
+}
+
+.line {
+    display: flex;
+    justify-content: center;
+}
+
+.ceil {
+    width: 75px;
+    height: 75px;
+    border: 2px solid aqua;
+}
+
+.ceil:hover{
+    border: 2px solid red;
+}
+
+.empty {
+    background-color: white;
+}
+
+.wall {
+    background-color: aquamarine;
+}
+
+.start {
+    background-color: green;
+}
+
+.finish {
+    background-color: red;
+}
+
+.way {
+    background-color: greenyellow;
+}
