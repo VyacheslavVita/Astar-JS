@@ -184,10 +184,10 @@ function astarSearch() {
                         neighbor.parent = currentCeil;
                     }
 
-                    let tempF = getDistance(neighbor, currentCeil) + getHeuristic(neighbor) + neighbor.parent.g;
+                    let tempG = currentCeil.g + getDistance(currentCeil, neighbor);
 
-                    if (neighbor.f == 0 || tempF < neighbor.f) {
-                        neighbor.g = getDistance(neighbor, currentCeil) + neighbor.parent.g;
+                    if (neighbor.g == 0 || tempG < neighbor.g) {
+                        neighbor.g = tempG;
                         neighbor.h = getHeuristic(neighbor);
                         neighbor.f = neighbor.g + neighbor.h;
                         neighbor.parent = currentCeil;
@@ -257,10 +257,10 @@ function recoveryWay(ceilsArray) {
 
 
 function getDistance(ceil1, ceil2) {
-    return Math.trunc(Math.sqrt(Math.pow(ceil1.x - ceil2.x, 2) + Math.pow(ceil1.y - ceil2.y, 2))) * 10;
+    return Math.sqrt(Math.pow(ceil1.x - ceil2.x, 2) + Math.pow(ceil1.y - ceil2.y, 2));
 }
 
 
 function getHeuristic(ceil) {
-    return Math.abs(ceil.x - finishElement.x) * 10;
+    return Math.abs(finishElement.x - ceil.x);
 }
