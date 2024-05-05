@@ -264,3 +264,53 @@ function getDistance(ceil1, ceil2) {
 function getHeuristic(ceil) {
     return Math.abs(finishElement.x - ceil.x);
 }
+
+
+
+
+
+
+
+
+
+/* 
+    ############################################################################
+   ############################################################################
+   ############################################################################
+   #######  JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS #######
+   #######  JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS #######
+   #######  JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS #######
+   #######  JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS #######
+   #######  JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS #######
+   #######  JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS #######
+   #######  JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS #######
+   #######  JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS #######
+   #######  JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS #######
+   #######  JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS #######
+   #######  JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS #######
+   #######  JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS #######
+   #######  JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS #######
+   #######  JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS #######
+   #######  JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS #######
+   #######  JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS #######
+   #######  JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS #######
+   #######  JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS #######
+   #######  JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS #######
+   #######  JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS #######
+   ############################################################################
+   ############################################################################
+   ############################################################################
+   ############################### Funny Momemt ###############################
+   ############################################################################ 
+   ####### Это что-то на подобии пасхалки, немного расскажу о разработке ######
+   ####### Я начал изучение HTML CSS и решил придумать для себя проект   ######
+   ####### Но просто верстать не хотелось, решил визуализировать         ######
+   ####### какой-нибудь алгоритм и выбор пал на aStar, т.к. мои навыки   ######
+   ####### в алгоритмике, да и в программировании не очень велики, то я  ######
+   ####### столкнулся с некоторыми трудностями, пришлось много гуглить,  ######
+   ####### т.к. знаний в JS почти не было, но получилось, что получилось ######
+   ####### Результатом я доволен, всем спасибо за внимание. Хорошего дня ######
+   ############################################################################
+   ############################################################################
+   ############################################################################
+*/
